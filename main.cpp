@@ -38,3 +38,13 @@ void outputdato(ejem2 dato){
     cout<<"El dato es: "<<dato<<endl;
 }
 */
+//---------------------------------------------------------------
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(){
+    return 0;
+}
