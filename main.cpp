@@ -40,6 +40,7 @@ void outputdato(ejem2 dato){
 */
 //---------------------------------------------------------------
 //Se trabajara con contenedores VECTORES, MAPAS E ITERADORES
+/*
 #include <iostream>
 #include <string>
 
@@ -89,5 +90,15 @@ int main(){
     imprimir(participantes);
     cout<<endl;
     imprimirinverso(participantes);
+    return 0;
+}
+*/
+
+#include<iostream>
+#include<string>
+#include<map>
+
+int main(){
+
     return 0;
 }
