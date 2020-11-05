@@ -39,12 +39,47 @@ void outputdato(ejem2 dato){
 }
 */
 //---------------------------------------------------------------
+//Se trabajara con contenedores VECTORES, MAPAS E ITERADORES
 #include <iostream>
 #include <string>
 
+#include<vector>
 using namespace std;
 
+struct Persona{
+    string nombre;
+    int edad;
+};
 
+vector<Persona> cargarDatos(vector<Persona> contenedor){
+    Persona persona;
+    persona.nombre="Dalia";
+    persona.edad=24;
+    contenedor.push_back(persona);
+    persona.nombre="Nahia";
+    persona.edad=2;
+    contenedor.push_back(persona);
+    persona.nombre="Edisson";
+    persona.edad=27;
+    contenedor.push_back(persona);
+    persona.nombre="Nancy";
+    persona.edad=42;
+    contenedor.push_back(persona);
+    persona.nombre="German";
+    persona.edad=45;
+    contenedor.push_back(persona);
+    return contenedor;
+}//creo vector llamado cargarDato
+//como atributos de ingreso a la funcion le ingreso un vector llamado persona y ese dato se denominara contenedor
+
+void imprimir(vector<Persona> contenedor){
+    for(auto p=begin(contenedor);p!=end(contenedor);p++){
+        cout<<"Nombre: "<<p->nombre<< "---Edad: "<<p->edad<<endl;
+    }
+}
 int main(){
+    vector<Persona> participantes;
+    participantes = cargarDatos(participantes);
+    imprimir(participantes);
     return 0;
 }
