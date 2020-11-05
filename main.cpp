@@ -170,13 +170,13 @@ map<string,vector<Persona>> cargarDatos(map<string,vector<Persona>> contenedor){
     contenedor["Electronica"].push_back(persona);
     return contenedor;
 }
-void imprimir(map<string,Persona> contenedor){
+void imprimir(map<string,vector<Persona>> contenedor){
     for(auto par=begin(contenedor);par!=end(contenedor);par++)
     {
         cout<<"Carrera: "<<par->first<<endl;
         for(auto es=begin(par->second);es!=end(par->second);es++)
         {
-        cout<< "Nombre: "<<es.nombre << " Identificacion: "<<es.identificacion<<endl<<endl;
+        cout<< "Nombre: "<<es->nombre << " Identificacion: "<<es->identificacion<<endl<<endl;
         }
     }
 }
