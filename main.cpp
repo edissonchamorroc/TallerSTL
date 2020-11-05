@@ -92,13 +92,97 @@ int main(){
     imprimirinverso(participantes);
     return 0;
 }
-*/
 
+*/
+//---------------------------MAPAS-------------------------
+/*
 #include<iostream>
 #include<string>
-#include<map>
+#include <map>
+using namespace std;
 
+struct Persona{
+    string nombre;
+    int identificacion;
+};
+map<string,Persona> cargarDatos(map<string,Persona> contenedor){
+    Persona persona;//la clave siepre se va a guardar en orden alfabetico
+    persona.nombre="Dalia";
+    persona.identificacion=24;
+    contenedor["Electronica"]=persona;
+    persona.nombre="Edisson";
+    persona.identificacion=22;
+    contenedor["Ambiental"]=persona;
+    persona.nombre="Carlos";
+    persona.identificacion=2;
+    contenedor["Electrica"]=persona;
+    persona.nombre="Pedro";
+    persona.identificacion=2;
+    contenedor["Civil"]=persona;
+    return contenedor;
+}
+void imprimir(map<string,Persona> contenedor){
+    for(auto par=begin(contenedor);par!=end(contenedor);par++){
+        cout<<"Departamento: "<<par->first<<endl;
+        cout<< "Jefe: "<<par->second.nombre<< " Identificacion: "<<par->second.identificacion<<endl<<endl;
+    }
+}
 int main(){
+    map<string,Persona> jefes;
+    jefes=cargarDatos(jefes);
+    imprimir(jefes);
+    return 0;
+}
+*/
+//-----------------ANIDADOS-------------------------
+#include<iostream>
+#include<string>
+#include <map>
+#include <vector>
+using namespace std;
 
+struct Persona{
+    string nombre;
+    int identificacion;
+};
+map<string,vector<Persona>> cargarDatos(map<string,vector<Persona>> contenedor){
+    Persona persona;//la clave siepre se va a guardar en orden alfabetico
+    persona.nombre="Dalia";
+    persona.identificacion=24;
+    contenedor["Electronica"].push_back(persona);
+    persona.nombre="Edisson";
+    persona.identificacion=22;
+    contenedor["Ambiental"].push_back(persona);
+    persona.nombre="Carlos";
+    persona.identificacion=2;
+    contenedor["Electrica"].push_back(persona);
+    persona.nombre="David";
+    persona.identificacion=2;
+    contenedor["Civil"].push_back(persona);
+    persona.nombre="Pedro";
+    persona.identificacion=2;
+    contenedor["Civil"].push_back(persona);
+    persona.nombre="Mario";
+    persona.identificacion=245;
+    contenedor["Ambiental"].push_back(persona);
+    persona.nombre="German";
+    persona.identificacion=234;
+    contenedor["Electronica"].push_back(persona);
+    return contenedor;
+}
+void imprimir(map<string,Persona> contenedor){
+    for(auto par=begin(contenedor);par!=end(contenedor);par++)
+    {
+        cout<<"Carrera: "<<par->first<<endl;
+        for(auto es=begin(par->second);es!=end(par->second);es++)
+        {
+        cout<< "Nombre: "<<es.nombre << " Identificacion: "<<es.identificacion<<endl<<endl;
+        }
+    }
+}
+int main(){
+    map<string,Persona> jefes;
+    jefes=cargarDatos(jefes);
+    imprimir(jefes);
     return 0;
 }
