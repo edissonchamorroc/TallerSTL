@@ -46,7 +46,7 @@ void outputdato(ejem2 dato){
 #include<vector>
 using namespace std;
 
-struct Persona{
+struct Persona{//structura igual a clase
     string nombre;
     int edad;
 };
@@ -77,9 +77,17 @@ void imprimir(vector<Persona> contenedor){
         cout<<"Nombre: "<<p->nombre<< "---Edad: "<<p->edad<<endl;
     }
 }
+void imprimirinverso(vector<Persona> contenedor){
+    for(auto p=contenedor.rbegin();p!=contenedor.rend();p++){
+        cout<<"Nombre: "<<p->nombre<< "---Edad: "<<p->edad<<endl;
+    }
+}
+
 int main(){
     vector<Persona> participantes;
     participantes = cargarDatos(participantes);
     imprimir(participantes);
+    cout<<endl;
+    imprimirinverso(participantes);
     return 0;
 }
