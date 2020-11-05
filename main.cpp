@@ -181,8 +181,8 @@ void imprimir(map<string,Persona> contenedor){
     }
 }
 int main(){
-    map<string,Persona> jefes;
-    jefes=cargarDatos(jefes);
-    imprimir(jefes);
+    map<string,vector<Persona>> estudiantes;
+    estudiantes=cargarDatos(estudiantes);
+    imprimir(estudiantes);
     return 0;
 }
